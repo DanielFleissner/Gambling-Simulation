@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+   <title> Betting simulator</title>
+   <style>
+    table, th, td {
+      border: 1px solid black;
+      border-collapse: collapse;
+    }
+    </style>
+<link rel="stylesheet" href="tabControl.css">
+
+</head>
+<body>
+
+
+<h1>Betting simulation</h1>
+<p id = "demo">This betting simulator runs the simulation accross 100 steps per run and then starts again to perfrom another run. 400 runs are performed at each investment percentage then the median for that investment percentage is calculated.</p>    
+
+<label for="proabilityOfWinning">% chance of winning:</label>
+<input type="number" id="proabilityOfWinning" name="proabilityOfWinning" min="0" max="100" step="1"><br>
+
+<button type="button" id="btnRun">Run</button>
+
+<!-- "tabs" is the tabs container -->
+<ul id = "tabs" class="tabs">
+
+</ul>
+
+<div id = "tablesContainer" class="tables">
+
+</div>
+
+<script src="test.js"></script>
+<script src="funcInputValuesErrorHandling.js"></script>
+<script src="funcCreateArrays.js"></script>
+<script src="funcCreateTables.js"></script>
+<script src="funcMedianArray.js"></script>
+<!-- <script src="loadTabs.js"></script> -->
+
+
+<body>
+</html>
+
+
+
+<!-- 
+create graph of median value at each percentile
+
+create additional user input to create nonmedian percentile array, best performer, and graph
+
+ask rebecca if I should include step 0 where 100,000 will be displayed -->
