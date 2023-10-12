@@ -30,7 +30,7 @@ function createTable(arrayTable) {
 function createTabs(){
 
     //get tabs container
-    const ulTabs = document.getElementById("tabs");
+    const ulTabs = document.getElementById("tabsContainer");
     //remove children from tabs container
     ulTabs.replaceChildren();
 
@@ -56,6 +56,7 @@ function createTabs(){
         
         //create label
         const label = document.createElement("label");
+        label.id = "label" + (index+1);
         label.htmlFor = "tab" + (index+1);
         label.innerHTML = (index+1) + "%";
         //append label to li

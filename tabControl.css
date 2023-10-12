@@ -1,4 +1,4 @@
-.tabs {
+#tabsContainer {
     list-style: none; 
     position: relative; 
     overflow: hidden;
@@ -6,39 +6,38 @@
     align-items: flex-start;
     display: flex;
     flex-wrap: nowrap;
-    list-style: none;
     
     overflow-x: scroll;
     padding: 0;
   }
-  .tabs li {
-    display: inline-block;
-    padding: 0 2px;
-  }
-  .tabs input[type="radio"] {
-    display: none;
-  }
-  .tabs label {
-    display: block;
-    cursor: pointer;
-    padding: 10px 15px;
-    border: 2px solid black;
-    border-bottom: 0;
-    border-radius: 3px 3px 0 0;
-  }
+#tabsContainer li {
+  display: inline-block;
+  padding: 0 2px;
+}
+#tabsContainer input[type="radio"] {
+  display: none;
+} 
+#tabsContainer label {
+  display: block;
+  cursor: pointer;
+  padding: 10px 15px;
+  border: 2px solid black;
+  border-bottom: 0;
+  border-radius: 3px 3px 0 0;
+}
 
-  .tabs input[type ="radio"]:checked + label {   
-    background-color: black;
-    color: #fff;
-  }
+#tabsContainer input[type ="radio"]:checked + label {   
+  background-color: black;
+  color: #fff;
+}
 
-  #tablesContainer {
+#tablesContainer {
 
-    position: relative; 
-    margin: 0;
-    padding: 0;
-    height: 300px; 
-    overflow: scroll;
+  position: relative; 
+  margin: 0;
+  padding: 0;
+  height: 300px; 
+  overflow: scroll;
 
-  }
+}
 
