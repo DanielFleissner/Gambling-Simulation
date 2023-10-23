@@ -9,10 +9,14 @@ function run(){
 
         /* sessionStorage.setItem("array of Tables", jsonArrayTables); */
 
+        
+
         createTabs();
         
         createArrayOfMedians();
 
+        outcomeDescription();
+        
         console.log("finished");
 
     }
@@ -23,21 +27,21 @@ btnRun.onclick = run;
 
 const btnChangeColor = document.getElementById("btnChangeColor");
 
-const para = document.getElementById("demo");
+/* const para = document.getElementById("demo"); */
 
-function changeColor(e){
+/* function changeColor(e){
     para.style.color = "red";
-}
+} */
 
 
-function testRand(){
+/* function testRand(){
     let sum = 0;
     for (let index = 0; index < 10000; index++) {
         let rand = betterMathRandom();
         sum = sum+ rand; 
     }
     console.log(sum);
-}
+} */
 
 
 

@@ -32,7 +32,6 @@ function createTableArray(investmentRatio, proabilityOfWinning){
     return arrayTable;
 }
 
-
 function createArrayOfTables(){
 //this collection of arrays contains one array at each investment ratio option.
     const numberOfTables = 99;

@@ -1,22 +1,23 @@
 #tabsContainer {
     list-style: none; 
     position: relative; 
-    overflow: hidden;
+    overflow: auto;
     font-family: sans-serif;
     align-items: flex-start;
     display: flex;
     flex-wrap: nowrap;
-    
-    overflow-x: scroll;
     padding: 0;
-  }
+}
+
 #tabsContainer li {
   display: inline-block;
   padding: 0 2px;
 }
+
 #tabsContainer input[type="radio"] {
   display: none;
-} 
+}
+
 #tabsContainer label {
   display: block;
   cursor: pointer;
@@ -32,12 +33,106 @@
 }
 
 #tablesContainer {
-
-  position: relative; 
   margin: 0;
   padding: 0;
   height: 300px; 
-  overflow: scroll;
-
+  overflow: auto;
 }
 
+#tablesContainer table {
+  position: relative;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+#tablesContainer table th,
+#tablesContainer table td {
+  background-color: white;
+  text-align: center; 
+}
+
+#tablesContainer table th {
+  white-space: pre;
+  padding: 3px;
+}
+
+#tablesContainer table th:nth-child(1) {
+  left: 0px;
+  z-index: 2;
+}
+
+#tablesContainer table td {
+    white-space: pre;
+  }
+  
+#tablesContainer table tr td:nth-child(1) {
+  position: sticky;
+  left: 0px;
+  z-index: 1;
+} 
+  
+#tablesContainer table th {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+  
+/* border size and location*/
+
+#tablesContainer table th{
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+}
+
+#tablesContainer table th:nth-child(1) {
+  border-left: 2px solid black;
+  border-right: 2px solid black;
+}
+
+#tablesContainer table th:nth-child(2) {
+  border-left: unset;
+}
+
+#tablesContainer table th:last-child {
+  border-right: 2px solid black;
+}
+
+#tablesContainer table td{
+  border-left: 0.5px solid black;
+  border-right: 0.5px solid black;
+  border-top: 0.5px solid black;
+  border-bottom: 0.5px solid black;
+}
+
+#tablesContainer table tr td:first-child {
+  border-left: 2px solid black;
+  border-right: 2px solid black;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+} 
+
+#tablesContainer table tr:last-child td:first-child{
+  border-bottom: 2px solid black;
+}
+
+#tablesContainer table tr:nth-child(2) td{
+  border-top: unset
+}
+
+#tablesContainer table tr td:nth-child(2) {
+  border-left: unset
+}
+
+#tablesContainer table tr td:last-child {
+  border-right: 1px solid black;
+}
+
+#tablesContainer table tr:last-child td{
+  border-bottom: 1px solid black;
+}
+
+#outcome{
+  white-space: pre;
+}

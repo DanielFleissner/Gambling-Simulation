@@ -6,25 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
    <title> Betting simulator</title>
-   <style>
-    table, th, td {
-      border: 1px solid black;
-      border-collapse: collapse;
-    }
-    </style>
+
 <link rel="stylesheet" href="tabControl.css">
 
 </head>
 <body>
 
 
-<h1>Betting simulation</h1>
-<p id = "demo">This betting simulator runs the simulation accross 100 steps per run and then starts again to perfrom another run. 400 runs are performed at each investment percentage then the median for that investment percentage is calculated.</p>    
+<h1>Gambling simulation</h1>
+<p id = "demo">This gambling simulator determines the ideal percentage of your total wealth to invest for a double or nothing betting situation at a given likelyhood of winning. The simulation starts with $100k for each run. There are 100 steps per run. 400 runs are performed at each investment percentage. Then the median of the last step of each run at a percentile is determined. Finally, the medians of all investment percentiles are compared. The percentile with the highest median is the recommended investment percentage.</p>    
 
 <label for="proabilityOfWinning">% chance of winning:</label>
 <input type="number" id="proabilityOfWinning" name="proabilityOfWinning" min="0" max="100" step="1"><br>
 
 <button type="button" id="btnRun">Run</button>
+
+<p id = "outcome"></p>
 
 <!-- "tabs" is the tabs container -->
 <ul id = "tabsContainer" class="tabs">
@@ -40,6 +37,7 @@
 <script src="funcCreateArrays.js"></script>
 <script src="funcCreateTables.js"></script>
 <script src="funcMedianArray.js"></script>
+<script src="funcOutcomeDescription.js"></script>
 <!-- <script src="loadTabs.js"></script> -->
 
 
@@ -49,7 +47,11 @@
 
 
 <!-- 
+add description saying what the ideal investment rate is.
+
 create graph of median value at each percentile
+
+add loading sign
 
 create additional user input to create nonmedian percentile array, best performer, and graph
 

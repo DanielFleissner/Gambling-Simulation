@@ -1,14 +1,21 @@
 function createTable(arrayTable) {
     const rows = arrayTable[0].length; //number of rows
-    const columns = arrayTable.length; //number of columns
+    const columns = arrayTable.length + 1; //number of columns
     const table = document.createElement("table");
     //table header
     const headerRow = document.createElement("tr");
+    
     for (let columnIndex = 0; columnIndex < columns; columnIndex++) {
-        const headerCell = document.createElement("th");   
-        headerRow.appendChild(headerCell);
-        headCellValue = "Run " + (columnIndex + 1)
-        headerCell.append(headCellValue);       
+        const headerCell = document.createElement("th");          
+        let headerCellValue;
+        if (columnIndex == 0) {       
+            headerCellValue = "Step";
+        }
+        else {  
+            headerCellValue = "Run " + columnIndex;
+        }
+        headerCell.append(headerCellValue);
+        headerRow.appendChild(headerCell);  
     }
     table.appendChild(headerRow);        
     //table body
@@ -16,9 +23,15 @@ function createTable(arrayTable) {
         const row = document.createElement("tr");
         for (let columnIndex = 0; columnIndex < columns; columnIndex++) {               
             const dataCell = document.createElement("td");
-            const dataCellValue = arrayTable[columnIndex][rowIndex];
-            row.appendChild(dataCell);
+            let dataCellValue;
+            if (columnIndex == 0) {
+                dataCellValue = rowIndex + 1;
+            }
+            else {
+                dataCellValue = arrayTable[columnIndex-1][rowIndex];
+            }
             dataCell.append(dataCellValue);   
+            row.appendChild(dataCell);
         }
         table.appendChild(row);
     }
@@ -36,7 +49,6 @@ function createTabs(){
 
     //get number of tables as upper limit of loop index
     numberOfTables = arrayTables.length;
-
 
     for (let index = 0; index < numberOfTables; index++) {
         
@@ -78,9 +90,6 @@ function changeActiveTable(event){
     //clear children from tables container
     const divTables = document.getElementById("tablesContainer");
     divTables.replaceChildren();
-
-    //get arrayTables from session storage
-    /*const jsonArrayTables = sessionStorage.getItem("array of Tables");*/
 
     //array index
     const index = numbericPortionOfID - 1;

@@ -2,6 +2,7 @@
 
 let highestMedian;
 let arrayOfMedians;
+let percentileWithHighestMedian;
 
 function createArrayOfMedians() {
     //get number of tables as upper limit of loop index
@@ -34,7 +35,8 @@ function createArrayOfMedians() {
     const ulTabs = document.getElementById("tabs");
     //select input element and click it
     //tab ID
-    const labelID = "label" + (indexOfhighestMedian+1);
+    percentileWithHighestMedian = indexOfhighestMedian + 1;
+    const labelID = "label" + (percentileWithHighestMedian);
     const labelWithHighestMedian = document.getElementById(labelID);
     labelWithHighestMedian.click();
     moveScrollBar(labelWithHighestMedian);
