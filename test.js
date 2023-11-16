@@ -1,59 +1,34 @@
 let arrayTables;
-let arrayMedians;
-
-function run(){
-    let errorFound = inputValuesErrorHandling();
-    if (!errorFound){
-        
-        arrayTables = createArrayOfTables();
-
-        /* sessionStorage.setItem("array of Tables", jsonArrayTables); */
-
-        
-
-        createTabs();
-        
-        createArrayOfMedians();
-
-        outcomeDescription();
-        
-        console.log("finished");
-
-    }
-}
 
 btnRun = document.getElementById("btnRun");
 btnRun.onclick = run;
 
 const btnChangeColor = document.getElementById("btnChangeColor");
 
-/* const para = document.getElementById("demo"); */
+async function run(){
 
-/* function changeColor(e){
-    para.style.color = "red";
-} */
+    addLoadingText();
 
+    await refreshDisplay();
 
-/* function testRand(){
-    let sum = 0;
-    for (let index = 0; index < 10000; index++) {
-        let rand = betterMathRandom();
-        sum = sum+ rand; 
+    let errorFound = inputValuesErrorHandling();
+      
+    if (!errorFound){ 
+
+        arrayTables = createArrayOfTables();        
+
+        createTabs();
+        
+        createArrayOfMedians();
+
+        outcomeDescription();
+
+        console.log("finished");
+
     }
-    console.log(sum);
-} */
 
+    createChart();
 
+    unhideElements();
 
- 
-
-
-
-
-
-
-
-
-
-
-
+}

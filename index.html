@@ -11,7 +11,7 @@
 
 </head>
 <body>
-
+    <div id="loader" class="center"></div>
 
 <h1>Gambling simulation</h1>
 <p id = "demo">This gambling simulator determines the ideal percentage of your total wealth to invest for a double or nothing betting situation at a given likelyhood of winning. The simulation starts with $100k for each run. There are 100 steps per run. 400 runs are performed at each investment percentage. Then the median of the last step of each run at a percentile is determined. Finally, the medians of all investment percentiles are compared. The percentile with the highest median is the recommended investment percentage.</p>    
@@ -23,23 +23,24 @@
 
 <p id = "outcome"></p>
 
+<canvas id="chartContainer" style="width:100%;max-width:600px"></canvas>
+
 <!-- "tabs" is the tabs container -->
 <ul id = "tabsContainer" class="tabs">
 
 </ul>
 
-<div id = "tablesContainer" class="tables">
+<div id = "tablesContainer" class="tables"></div>
 
-</div>
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
 <script src="test.js"></script>
+<script src="funcLoading.js"></script>
 <script src="funcInputValuesErrorHandling.js"></script>
 <script src="funcCreateArrays.js"></script>
 <script src="funcCreateTables.js"></script>
 <script src="funcMedianArray.js"></script>
 <script src="funcOutcomeDescription.js"></script>
-<!-- <script src="loadTabs.js"></script> -->
-
+<script src="funcGraph.js"></script>
 
 <body>
 </html>

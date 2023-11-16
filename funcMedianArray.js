@@ -40,6 +40,7 @@ function createArrayOfMedians() {
     const labelWithHighestMedian = document.getElementById(labelID);
     labelWithHighestMedian.click();
     moveScrollBar(labelWithHighestMedian);
+
 }
 
 function funcMedian(arr) {
