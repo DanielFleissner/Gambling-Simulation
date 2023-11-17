@@ -1,4 +1,5 @@
 function createTable(arrayTable) {
+
     const rows = arrayTable[0].length; //number of rows
     const columns = arrayTable.length + 1; //number of columns
     const table = document.createElement("table");
@@ -80,6 +81,7 @@ function createTabs(){
 }
 
 function changeActiveTable(event){
+
     //get input
     const input = event.target;
     //get tab id
@@ -100,5 +102,4 @@ function changeActiveTable(event){
 
     //append table to table container
     divTables.appendChild(table);
-
 }

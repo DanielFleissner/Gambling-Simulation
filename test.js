@@ -11,6 +11,8 @@ async function run(){
 
     await refreshDisplay();
 
+    unhideElements();
+    
     let errorFound = inputValuesErrorHandling();
       
     if (!errorFound){ 
@@ -28,7 +30,5 @@ async function run(){
     }
 
     createChart();
-
-    unhideElements();
 
 }
