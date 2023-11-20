@@ -129,10 +129,20 @@
   border-right: 1px solid black;
 }
 
-#tablesContainer table tr:last-child td{
+#tablesContainer table tr:last-child td {
   border-bottom: 1px solid black;
 }
 
-#outcome{
-  white-space: pre;
+/* graph styling */
+
+ #chartContainer {
+  margin: auto;
+  position: relative; 
+  width: 80vw;
+  aspect-ratio: 2.7;
+} 
+
+/* center title */
+h1 {
+  text-align: center;
 }

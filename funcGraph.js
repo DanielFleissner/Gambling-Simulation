@@ -11,9 +11,7 @@ function createChart(){
     
     const canvas = document.createElement("canvas");
     canvas.id = "chartCanvas";
-    canvas.style.width = "100%";
-    canvas.style.maxWidth = "800px";
-    canvas.style.maxHeight = "400px";
+    
 
     chartContainer.appendChild(canvas);
     new Chart("chartCanvas", {
@@ -29,10 +27,13 @@ function createChart(){
         },
 
         options: {
+            responsive: true,  
+            maintainAspectRatio: true,
+            aspectRatio: 2.7,
             plugins: {
                 title: {
                     display: true,
-                    text: 'Custom Chart Title'
+                    text: 'Median money at step 100 at each percentile'
                 },
                 legend: {
                   display: false

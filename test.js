@@ -3,8 +3,6 @@ let arrayTables;
 btnRun = document.getElementById("btnRun");
 btnRun.onclick = run;
 
-const btnChangeColor = document.getElementById("btnChangeColor");
-
 async function run(){
 
     addLoadingText();

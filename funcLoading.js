@@ -1,7 +1,7 @@
 function addLoadingText(){
     hideElements();
-    const p = document.getElementById("outcome");
-    p.innerHTML = "Loading...";
+    const outcomePart1 = document.getElementById("outcomePart1");
+    outcomePart1.innerHTML = "Loading...";
 }
 
 function hideElements(){
@@ -11,6 +11,8 @@ function hideElements(){
     tablesContainer.style.display = "none";
     const chartContainer = document.getElementById("chartContainer");
     chartContainer.style.display = "none";
+    const outcomePart2 = document.getElementById("outcomePart2");
+    outcomePart2.style.display = "none";
 }
 
 function unhideElements(){
@@ -20,6 +22,8 @@ function unhideElements(){
     tablesContainer.style.display = "block";
     const chartContainer = document.getElementById("chartContainer");
     chartContainer.style.display = "block";
+    const outcomePart2 = document.getElementById("outcomePart2");
+    outcomePart2.style.display = "block";
 }
 
 async function refreshDisplay(){
