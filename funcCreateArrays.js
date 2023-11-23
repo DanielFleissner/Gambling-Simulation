@@ -44,11 +44,10 @@ function createArrayOfTables(){
         const arrayTable = createTableArray(investmentRatio, proabilityOfWinning);
         arrayTables[index] = arrayTable;
     }
-    return arrayTables;
 }
 
 
 
-function betterMathRandom() {
+/* function betterMathRandom() {
     return window.crypto.getRandomValues(new Uint32Array(1))[0] / 4294967295; 
-}
+} */

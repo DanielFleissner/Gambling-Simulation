@@ -1,7 +1,7 @@
 function addLoadingText(){
-    hideElements();
     const outcomePart1 = document.getElementById("outcomePart1");
     outcomePart1.innerHTML = "Loading...";
+    outcomePart1.style.display = "block";
 }
 
 function hideElements(){
@@ -11,6 +11,8 @@ function hideElements(){
     tablesContainer.style.display = "none";
     const chartContainer = document.getElementById("chartContainer");
     chartContainer.style.display = "none";
+    const outcomePart1 = document.getElementById("outcomePart1");
+    outcomePart1.style.display = "none";
     const outcomePart2 = document.getElementById("outcomePart2");
     outcomePart2.style.display = "none";
 }
@@ -26,6 +28,6 @@ function unhideElements(){
     outcomePart2.style.display = "block";
 }
 
-async function refreshDisplay(){
-    return await new Promise((resolve)=>{setTimeout(()=>resolve(),0)});
+function refreshDisplay(){
+    return new Promise((resolve)=>{setTimeout(()=>resolve(), 20)});
 }

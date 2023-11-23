@@ -80,8 +80,7 @@ function createTabs(){
     }
 }
 
-function changeActiveTable(event){
-
+async function changeActiveTable(event){
     //get input
     const input = event.target;
     //get tab id
@@ -92,6 +91,19 @@ function changeActiveTable(event){
     //clear children from tables container
     const divTables = document.getElementById("tablesContainer");
     divTables.replaceChildren();
+
+    //if the run button was not clicked then the event must have been triggered by the user clicking on the tab
+    if (!runButtonClicked){
+        const p = document.createElement("p");
+        p.innerHTML = "Loading...";
+        p.style.margin = 0;
+        //add loading text to container
+        divTables.appendChild(p);
+        await refreshDisplay();
+        //remove loading text from container
+        divTables.replaceChildren();
+        
+    }
 
     //array index
     const index = numbericPortionOfID - 1;

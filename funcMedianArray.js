@@ -28,6 +28,9 @@ function createArrayOfMedians() {
         //assign values to array elements
         arrayOfMedians[index] = median;
     }
+}
+
+function selectTabWithHighestMedian(){
     highestMedian = Math.max(...arrayOfMedians);
     //find index at hightest median
     const indexOfhighestMedian = arrayOfMedians.indexOf(highestMedian);
@@ -40,7 +43,6 @@ function createArrayOfMedians() {
     const labelWithHighestMedian = document.getElementById(labelID);
     labelWithHighestMedian.click();
     moveScrollBar(labelWithHighestMedian);
-
 }
 
 function funcMedian(arr) {
@@ -55,7 +57,6 @@ function funcMedian(arr) {
 }
 
 function moveScrollBar(checkedLabel){
-
     const firstLabel = document.getElementById("label1");
     const lastLabel = document.getElementById("label99");
 

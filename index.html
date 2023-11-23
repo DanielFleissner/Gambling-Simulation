@@ -4,58 +4,46 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-   <title>Gambling Simulation</title>
-
-<link rel="stylesheet" href="tabControl.css">
-
+    <title>Gambling Simulation</title>
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <div id="loader" class="center"></div>
 
-<h1>Gambling Simulation</h1>
-<p>This gambling simulator determines the ideal percentage of your total wealth to invest for a double or nothing betting situation at a given likelyhood of winning. The simulation starts with $100k for each run. There are 100 steps per run. 400 runs are performed at each investment percentage. Then the median of the last step of each run at a percentile is determined. Finally, the medians of all investment percentiles are compared. The percentile with the highest median is the recommended investment percentage.</p>    
+    <h1>Gambling Simulation</h1>
 
-<label for="proabilityOfWinning">% chance of winning:</label>
-<input type="number" id="proabilityOfWinning" name="proabilityOfWinning" min="0" max="100" step="1"><br>
+    <p>This gambling simulator determines the ideal percentage of your total wealth to invest for a double or nothing betting situation at a given likelyhood of winning. The simulation starts with $100k for each run. There are 100 steps per run. 400 runs are performed at each investment percentage. Then the median of the last step of each run at a percentile is determined. Finally, the medians of all investment percentiles are compared. The percentile with the highest median is the recommended investment percentage.</p>    
 
-<button type="button" id="btnRun">Run</button>
+    <label for="proabilityOfWinning">% chance of winning:</label>
 
-<p id = "outcomePart1"></p>
+    <input type="number" id="proabilityOfWinning" name="proabilityOfWinning" min="0" max="100" step="1">
 
-<div id = "chartContainer"></div>
+    <button type="button" id="btnRun">Calculate</button>
 
-<p id = "outcomePart2"></p>
+    <p id = "outcomePart1" hidden></p>
 
-<!-- "tabs" is the tabs container -->
-<ul id = "tabsContainer" class="tabs">
+    <div id = "chartContainer" hidden></div>
 
-</ul>
+    <p id = "outcomePart2" hidden></p>
 
-<div id = "tablesContainer" class="tables"></div>
+    <!-- "tabs" is the tabs container -->
+    <ul id = "tabsContainer" class="tabs" hidden>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
-<script src="test.js"></script>
-<script src="funcLoading.js"></script>
-<script src="funcInputValuesErrorHandling.js"></script>
-<script src="funcCreateArrays.js"></script>
-<script src="funcCreateTables.js"></script>
-<script src="funcMedianArray.js"></script>
-<script src="funcOutcomeDescription.js"></script>
-<script src="funcGraph.js"></script>
+    </ul>
 
+    <div id = "tablesContainer" class="tables" hidden>
+        
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
+    <script src="main.js"></script>
+    <script src="funcLoading.js"></script>
+    <script src="funcInputValuesErrorHandling.js"></script>
+    <script src="funcCreateArrays.js"></script>
+    <script src="funcCreateTables.js"></script>
+    <script src="funcMedianArray.js"></script>
+    <script src="funcOutcomeDescription.js"></script>
+    <script src="funcGraph.js"></script>
+    
 <body>
 </html>
-
-
-
-<!-- 
-add description saying what the ideal investment rate is.
-
-create graph of median value at each percentile
-
-add loading sign
-
-create additional user input to create nonmedian percentile array, best performer, and graph
-
-ask rebecca if I should include step 0 where 100,000 will be displayed -->
