@@ -3,6 +3,8 @@ let arrayTables;
 let firstProgramRun = true;
 let tabClickedByUser;
 
+let activeTabID;
+
 btnRun = document.getElementById("btnRun");
 btnRun.onclick = run;
 document.addEventListener("keydown", runIfEnterKeydown);

@@ -97,31 +97,38 @@ function assignValuesToTable(arrayTable){
 }
 
 async function changeActiveTab(event){
+    
     //get input
     const input = event.target;
     //get tab id
     const tabID = input.id;
-    //get numberic part of tab id
-    const numbericPortionOfID = tabID.substring(3);
 
-    if (tabClickedByUser == true){
-        const p = document.getElementById("loadingTable");
-        p.style.display = "block";
-        p.style.margin = 0;
-        const table = document.getElementById("table");
-        table.style.display = "none";
-        //display loading text in container
-        await refreshDisplay();
-        //hide loading text from container
-        p.style.display = "none";
-        table.style.display = "table";
+    //only run if the selected tab is not already the active tab
+    if(activeTabID !== tabID){
+        //get numberic part of tab id
+        const numbericPortionOfID = tabID.substring(3);
+
+        if (tabClickedByUser == true){
+            const p = document.getElementById("loadingTable");
+            p.style.display = "block";
+            p.style.margin = 0;
+            const table = document.getElementById("table");
+            table.style.display = "none";
+            //display loading text in container
+            await refreshDisplay();
+            //hide loading text from container
+            p.style.display = "none";
+            table.style.display = "table";
+        }
+        //array index
+        const index = numbericPortionOfID - 1;
+
+        //table data
+        const arrayTable = arrayTables[index];
+
+        //assign values to table
+        assignValuesToTable(arrayTable);
+        //set activeTabID global variable to currently selected tab
+        activeTabID = tabID;
     }
-    //array index
-    const index = numbericPortionOfID - 1;
-    
-    //table data
-    const arrayTable = arrayTables[index];
-    
-    //assign values to table
-    assignValuesToTable(arrayTable);
 }
