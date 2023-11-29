@@ -1,5 +1,7 @@
 let arrayTables;
-let runButtonClicked;
+
+let firstProgramRun = true;
+let tabClickedByUser;
 
 btnRun = document.getElementById("btnRun");
 btnRun.onclick = run;
@@ -13,8 +15,6 @@ function runIfEnterKeydown(e) {
 
 
 async function run(){
-
-    runButtonClicked = true;
 
     hideElements();
     
@@ -30,19 +30,33 @@ async function run(){
 
         unhideElements();
 
-        createArrayOfTables();        
+        if (firstProgramRun){
+          
+          createArrayOfTables();//creates empty three dimensional array
+          
+          createTabs();
 
-        createTabs();
+          createTable();//creates empty table
+
+          createArrayOfMedians();//create empty one dimesional array
+
+          //createChart();//create empty chart
+
+          firstProgramRun = false;
+
+        }
+
+        assignValuesToArrayOfTables();
+               
+        assignValuesToArrayOfMedians();
+
+        tabClickedByUser = false;
         
-        createArrayOfMedians();
-
         selectTabWithHighestMedian();
 
         outcomeDescription();
 
         createChart();
-
-        runButtonClicked = false;
 
         console.log("finished");
 

@@ -4,12 +4,17 @@ let highestMedian;
 let arrayOfMedians;
 let percentileWithHighestMedian;
 
-function createArrayOfMedians() {
+function createArrayOfMedians(){
+    //get number of tables as upper limit of loop index
+    const numberOfTables = arrayTables.length;
+    arrayOfMedians = new Array(numberOfTables);
+}
+    
+function assignValuesToArrayOfMedians(){
     //get number of tables as upper limit of loop index
     const numberOfTables = arrayTables.length;
     const rows = arrayTables[0][0].length; //number of rows = number of steps
     const columns = arrayTables[0].length; // number of columns = number of runs
-    arrayOfMedians = new Array(numberOfTables);
 
     for (let index = 0; index < numberOfTables; index++) {
         //get table from tables array at index
@@ -41,7 +46,9 @@ function selectTabWithHighestMedian(){
     percentileWithHighestMedian = indexOfhighestMedian + 1;
     const labelID = "label" + (percentileWithHighestMedian);
     const labelWithHighestMedian = document.getElementById(labelID);
+    tabClickedByUser = false;
     labelWithHighestMedian.click();
+    tabClickedByUser = true;
     moveScrollBar(labelWithHighestMedian);
 }
 

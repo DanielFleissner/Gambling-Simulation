@@ -12,7 +12,6 @@ function createChart(){
     const canvas = document.createElement("canvas");
     canvas.id = "chartCanvas";
     
-
     chartContainer.appendChild(canvas);
     new Chart("chartCanvas", {
         type: "line",
@@ -25,7 +24,6 @@ function createChart(){
                 data: arrayOfMedians
             }]
         },
-
         options: {
             responsive: true,  
             maintainAspectRatio: true,
@@ -59,8 +57,5 @@ function createChart(){
                 }
               }
         }
-
-
-
     });
 }
