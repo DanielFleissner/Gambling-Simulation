@@ -1,5 +1,8 @@
 let arrayTables;
-let runButtonClicked;
+let tabClickedByUser;
+let activeTabID;
+let runningMain = false; //this feature does not work for some reason
+let changingTab = false; //this feature does not work for some reason
 
 btnRun = document.getElementById("btnRun");
 btnRun.onclick = run;
@@ -14,7 +17,10 @@ function runIfEnterKeydown(e) {
 
 async function run(){
 
-    runButtonClicked = true;
+  if(!runningMain){
+    runningMain = true;
+    tabClickedByUser = false;
+    activeTabID = "not defined yet"
 
     hideElements();
     
@@ -42,10 +48,11 @@ async function run(){
 
         createChart();
 
-        runButtonClicked = false;
+        tabClickedByUser = true;
 
         console.log("finished");
 
     }
-
+    runningMain = false;
+  }
 }

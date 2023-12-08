@@ -65,16 +65,9 @@ function moveScrollBar(checkedLabel){
     
     const checkedLabelX = checkedLabel.getBoundingClientRect().x;
     const checkedLabelWidth = checkedLabel.getBoundingClientRect().width;
-
-    console.log("first lable X: " + firstLabelX);
-    console.log("last lable X: " + lastLabelX);
-    console.log("checked lable X: " + checkedLabelX);
-    console.log("checked lable Width: " + checkedLabelWidth);
     
     //scroll
     const ul = document.getElementById("tabsContainer");
     const widthOfVisiblePortion = ul.clientWidth; //width of visible portion of scroll bar. This excludes the width of the overflow portion.
-    console.log("visible width: " + widthOfVisiblePortion);
-    console.log("scroll width: " + ul.scrollWidth)
     ul.scrollLeft = checkedLabelX-firstLabelX+checkedLabelWidth/2 -widthOfVisiblePortion/2;
 }

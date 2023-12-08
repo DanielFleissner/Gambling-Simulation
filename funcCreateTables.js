@@ -81,37 +81,44 @@ function createTabs(){
 }
 
 async function changeActiveTable(event){
-    //get input
-    const input = event.target;
-    //get tab id
-    const tabID = input.id;
-    //get numberic part of tab id
-    const numbericPortionOfID = tabID.substring(3);
+    if(!changingTab){
+        changingTab = true;
+        //get input
+        const input = event.target;
+        //get tab id
+        const tabID = input.id;
+        //only run if the selected tab is not already the active tab
+        if(activeTabID !== tabID){
+            //clear children from tables container
+            const divTables = document.getElementById("tablesContainer");
+            divTables.replaceChildren();
 
-    //clear children from tables container
-    const divTables = document.getElementById("tablesContainer");
-    divTables.replaceChildren();
+            //if the calculate button was not clicked then the event must have been triggered by the user clicking on the tab
+            if (tabClickedByUser){
+                const p = document.createElement("p");
+                p.innerHTML = "Loading...";
+                p.style.margin = 0;
+                //add loading text to container
+                divTables.appendChild(p);
+                await refreshDisplay();
+                //remove loading text from container
+                divTables.replaceChildren();
+            }
+            //get numeric part of tab id
+            const numbericPortionOfID = tabID.substring(3);
+            //array index
+            const index = numbericPortionOfID - 1;
 
-    //if the run button was not clicked then the event must have been triggered by the user clicking on the tab
-    if (!runButtonClicked){
-        const p = document.createElement("p");
-        p.innerHTML = "Loading...";
-        p.style.margin = 0;
-        //add loading text to container
-        divTables.appendChild(p);
-        await refreshDisplay();
-        //remove loading text from container
-        divTables.replaceChildren();
-        
+            //create table
+            const arrayTable = arrayTables[index];
+            const table = createTable(arrayTable);
+
+            //append table to table container
+            divTables.appendChild(table);
+
+            //set activeTabID global variable to currently selected tab
+            activeTabID = tabID;
+        }
+        changingTab = false;
     }
-
-    //array index
-    const index = numbericPortionOfID - 1;
-
-    //create table
-    const arrayTable = arrayTables[index];
-    const table = createTable(arrayTable);
-
-    //append table to table container
-    divTables.appendChild(table);
 }
